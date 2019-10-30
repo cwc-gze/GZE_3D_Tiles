@@ -62,15 +62,19 @@ package  {
 			
 			//!Create an image
 			oPerso = new Perso(this, 300.0, 500.0);
-			oPerso.fAddSequence( "MegaSam/Walk", 0, 0, true);
 			
-			oTmx = new Tmx("MyFirstTiles.tmx");
-			if(oTmx.fLoad()){
-				
+			var _oRc : RcImg = new  RcImg("MegaSam/Walk");
+			oPerso.fAddSequence( _oRc, 0, 0, true);
+			
+			
+			oTmx = new Tmx(0);
+			if(oTmx.fLoad("MyFirstTiles.tmx")){
+			
+				//TODO if loaded!
+				oMainLayer = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
 			}
 			
-			oMainLayer = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
-			
+
 			
 			//EnYaw(5);
 			//EnPitch(5);

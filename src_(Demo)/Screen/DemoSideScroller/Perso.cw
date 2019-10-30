@@ -23,18 +23,21 @@ package  {
 
 
 		override public function fUpdateParentToChild():Void {
+		/*
 
-			if(oItf.oKey.fIsDown(eKey.Right)){
-				MnX(nSpeed);
-				TnWidth(1);
+			if(oItf.oKey.fIsDown(eKey.Right)){ //TODO!! 
+			//	MnX(nSpeed);
+			//	TnWidth(1);
 			}
 			if(oItf.oKey.fIsDown(eKey.Left)){
-				MnX(nSpeed * -1);
-				TnWidth(-1);
+				//MnX(nSpeed * -1);
+			//	TnWidth(-1);
 			}
 
 
 			fUpdateSequence();
+			
+			*/
 		}
 
 
