@@ -4,6 +4,8 @@ package  {
 
 	import GZ.File.RcImgSequence;
 	import GZ.File.RcImg;
+	import GZ.File.Resource;
+	import GZ.File.RcText;
 	import GZ.Gfx.Root;
 	
 	import GZ.Sys.Interface.Interface;
@@ -68,7 +70,8 @@ package  {
 			
 			
 			oTmx = new Tmx(0);
-			if(oTmx.fLoad("MyFirstTiles.tmx")){
+			var _oRcTmx : RcText = new  RcText("MyFirstTiles.tmx");
+			if(oTmx.fLoad(_oRcTmx)){
 			
 				//TODO if loaded!
 				oMainLayer = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
