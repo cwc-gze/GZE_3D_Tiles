@@ -65,12 +65,14 @@ package  {
 			//!Create an image
 			oPerso = new Perso(this, 300.0, 500.0);
 			
-			var _oRc : RcImg = new  RcImg("MegaSam/Walk");
+			var _oRc : RcImg = new  RcImg("Exe|Rc/Sprite/MegaSam/Walk");
 			oPerso.fAddSequence( _oRc, 0, 0, true);
 			
 			
 			oTmx = new Tmx(0);
-			var _oRcTmx : RcText = new  RcText("MyFirstTiles.tmx");
+			var _oRcTmx : RcText = new  RcText("Exe|Rc/Tiled/MyFirstTiles.tmx");
+			
+			
 			if(oTmx.fLoad(_oRcTmx)){
 			
 				//TODO if loaded!
