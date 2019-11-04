@@ -1,7 +1,7 @@
 package  { 
 	
 	import GZ.Gfx.Object;
-
+	import GZ.Sys.Interface.Context;
 	import GZ.File.RcImgSequence;
 	import GZ.File.RcImg;
 	import GZ.File.Resource;
@@ -63,10 +63,10 @@ package  {
 			}*/
 			
 			//!Create an image
-			oPerso = new Perso(this, 300.0, 500.0);
+			//oPerso = new Perso(this, 300.0, 500.0);
 			
-			var _oRc : RcImg = new  RcImg("Exe|Rc/Sprite/MegaSam/Walk");
-			oPerso.fAddSequence( _oRc, 0, 0, true);
+			//var _oRc : RcImg = new  RcImg("Exe|Rc/Sprite/MegaSam/Walk");
+			//oPerso.fAddSequence( _oRc, 0, 0, true);
 			
 			
 			oTmx = new Tmx(0);
@@ -74,12 +74,12 @@ package  {
 			
 			
 			if(oTmx.fLoad(_oRcTmx)){
-			
+					Debug.fTrace("Laoded!!!!!!!!!!!!!");
 				//TODO if loaded!
 				oMainLayer = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
 			}
 			
-
+			Debug.fTrace("Finish laoded!");
 			
 			//EnYaw(5);
 			//EnPitch(5);
@@ -102,16 +102,12 @@ package  {
 			vPos.nX = 80;
 			vPos.nY = 50;
 			
-			/*
-			//!Updated each frame, parents before
-			var _nMouseX : Float = oItf.oWindow.nMouseX - oItf.nHalfFrameWidth;
-			var _nMouseY : Float = oItf.oWindow.nMouseY - oItf.nHalfFrameHeight;
+			var _nMouseX : Float = Context.nMouseX - oItf.nHalfFrameWidth;
+			var _nMouseY : Float = Context.nMouseY - oItf.nHalfFrameHeight;
 
 			//!Updated each frame, parents before
-			TnYaw(_nMouseX / oItf.nHalfFrameWidth / -1.15);
-			TnPitch(_nMouseY /oItf.nHalfFrameHeight / -1.15);
-			
-			*/
+			vRot.nYaw = _nMouseX / oItf.nHalfFrameWidth / -1.15;
+			vRot.nPitch = _nMouseY / oItf.nHalfFrameHeight / -1.15;
 			
 			
 		}
