@@ -24,7 +24,7 @@ package  {
 	import GZ.Sff.Xml.XmlText;
 	
 	import GZ.Sff.Tmx.Tmx;
-	
+	import GZ.Gpu.ShaderModel.AtModel.Attribute_Quad;
 	
 	
 	/**
@@ -42,6 +42,9 @@ package  {
 		public var oTmx : Tmx;
 		public var oMainLayer : LayerClip;
 
+		
+		
+		public var oTexNormalLayer : RcImg;
 		
 		
 		public var oPerso : Perso;
@@ -71,6 +74,14 @@ package  {
 			
 			oTmx = new Tmx(0);
 			var _oRcTmx : RcText = new  RcText("Exe|Rc/Tiled/MyFirstTiles.tmx");
+			
+			oTexNormalLayer = new RcImg("Exe|Rc/Tiled/MetroidLike/testBump.png");
+			oTexNormalLayer.fSetGpuTexLayer(Attribute_Quad.oTexNormal);
+			oTexNormalLayer.fCpuLoad();
+			if(Context.oItf.bGpuDraw){
+				oTexNormalLayer.fGpuLoad();
+			}
+			
 			
 			
 			if(oTmx.fLoad(_oRcTmx)){
