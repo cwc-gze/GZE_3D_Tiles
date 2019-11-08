@@ -66,22 +66,29 @@ package  {
 			}*/
 			
 			//!Create an image
-			//oPerso = new Perso(this, 300.0, 500.0);
+	
 			
-			//var _oRc : RcImg = new  RcImg("Exe|Rc/Sprite/MegaSam/Walk");
-			//oPerso.fAddSequence( _oRc, 0, 0, true);
+	
 			
 			
 			oTmx = new Tmx(0);
 			var _oRcTmx : RcText = new  RcText("Exe|Rc/Tiled/MyFirstTiles.tmx");
 			
+			Debug.fTrace("RcImgSequence --- ");
+			var _oRc : RcImgSequence = new  RcImgSequence("Exe|Rc/Sprite/MegaSam/Walk/Walk0001.png"); //Walk0001.png
+			Debug.fTrace("RcImgSequence2 --- ");
+			
+			oPerso = new Perso(this, 300.0, 500.0);
+			oPerso.fAddSequence( _oRc, 0, 0, true);
+			
+			/*
 			oTexNormalLayer = new RcImg("Exe|Rc/Tiled/MetroidLike/testBump.png");
 			oTexNormalLayer.fSetGpuTexLayer(Attribute_Quad.oTexNormal);
 			oTexNormalLayer.fCpuLoad();
 			if(Context.oItf.bGpuDraw){
 				oTexNormalLayer.fGpuLoad();
 			}
-			
+			*/
 			
 			
 			if(oTmx.fLoad(_oRcTmx)){
@@ -117,8 +124,8 @@ package  {
 			var _nMouseY : Float = Context.nMouseY - oItf.nHalfFrameHeight;
 
 			//!Updated each frame, parents before
-			vRot.nYaw = _nMouseX / oItf.nHalfFrameWidth / -1.15;
-			vRot.nPitch = _nMouseY / oItf.nHalfFrameHeight / -1.15;
+	//		vRot.nYaw = _nMouseX / oItf.nHalfFrameWidth / -1.15;
+	//		vRot.nPitch = _nMouseY / oItf.nHalfFrameHeight / -1.15;
 			
 			
 		}

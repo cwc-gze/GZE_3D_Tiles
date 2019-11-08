@@ -23,13 +23,19 @@ package  {
 
 
 		override public function fUpdateParentToChild():Void {
-		/*
+		
+		//	vPos.fSetSpeed(10);
+		//	vPos.fSetLimit(99900);
+		
+		
 
-			if(oItf.oKey.fIsDown(eKey.Right)){ //TODO!! 
+			if(Key.fIsDown(Right)){ 
+				vPos.nX = vPos.nX + nSpeed;
 			//	MnX(nSpeed);
 			//	TnWidth(1);
 			}
-			if(oItf.oKey.fIsDown(eKey.Left)){
+			
+			if(Key.fIsDown(Left)){ 
 				//MnX(nSpeed * -1);
 			//	TnWidth(-1);
 			}
@@ -37,7 +43,7 @@ package  {
 
 			fUpdateSequence();
 			
-			*/
+			
 		}
 
 
