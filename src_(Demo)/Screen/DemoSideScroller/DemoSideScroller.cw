@@ -25,7 +25,7 @@ package  {
 	
 	import GZ.Sff.Tmx.Tmx;
 	import GZ.Gpu.ShaderModel.AtModel.Attribute_Quad;
-	
+	import GZ.Gfx.Tile.LayerData;
 	
 	/**
 	 * @author Maeiky
@@ -40,7 +40,8 @@ package  {
 		
 	
 		public var oTmx : Tmx;
-		public var oMainLayer : LayerClip;
+		public var oLayerFront : LayerClip;
+		public var oLayerWall : LayerClip;
 
 		
 		
@@ -74,12 +75,14 @@ package  {
 			oTmx = new Tmx(0);
 			var _oRcTmx : RcText = new  RcText("Exe|Rc/Tiled/MyFirstTiles.tmx");
 			
+			/*
 			Debug.fTrace("RcImgSequence --- ");
 			var _oRc : RcImgSequence = new  RcImgSequence("Exe|Rc/Sprite/MegaSam/Walk/Walk0001.png"); //Walk0001.png
 			Debug.fTrace("RcImgSequence2 --- ");
 			
 			oPerso = new Perso(this, 300.0, 500.0);
 			oPerso.fAddSequence( _oRc, 0, 0, true);
+			*/
 			
 			/*
 			oTexNormalLayer = new RcImg("Exe|Rc/Tiled/MetroidLike/testBump.png");
@@ -92,9 +95,14 @@ package  {
 			
 			
 			if(oTmx.fLoad(_oRcTmx)){
-					Debug.fTrace("Laoded!!!!!!!!!!!!!");
+				Debug.fWarning("Laoded!!!!!!!!!!!!!");
+				Debug.fWarning("Nb Layer : " + oTmx.oMainMap.aLayer.nSize);
+			//	Debug.fWarning("Nb Layer : " + oTmx.oMainMap.aLayer[1].sName);
 				//TODO if loaded!
-				oMainLayer = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
+			
+				oLayerFront = new LayerClip(this, oTmx.oMainMap.aLayer[1], 0, 0);
+				oLayerWall = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
+				oLayerWall.vPos.nZ = -32;
 			}
 			
 			Debug.fTrace("Finish laoded!");
@@ -124,8 +132,8 @@ package  {
 			var _nMouseY : Float = Context.nMouseY - oItf.nHalfFrameHeight;
 
 			//!Updated each frame, parents before
-	//		vRot.nYaw = _nMouseX / oItf.nHalfFrameWidth / -1.15;
-	//		vRot.nPitch = _nMouseY / oItf.nHalfFrameHeight / -1.15;
+			vRot.nYaw = _nMouseX / oItf.nHalfFrameWidth / -1.15;
+			vRot.nPitch = _nMouseY / oItf.nHalfFrameHeight / -1.15;
 			
 			
 		}
