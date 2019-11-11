@@ -38,6 +38,7 @@
 
 
 #Dir
+out/
 Demo_Example/
 obj/
 Tcp/

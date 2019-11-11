@@ -42,6 +42,7 @@ package  {
 		public var oTmx : Tmx;
 		public var oLayerFront : LayerClip;
 		public var oLayerWall : LayerClip;
+		public var oLayerFloor : LayerClip;
 
 		
 		
@@ -100,8 +101,16 @@ package  {
 			//	Debug.fWarning("Nb Layer : " + oTmx.oMainMap.aLayer[1].sName);
 				//TODO if loaded!
 			
+			
+			
 				oLayerFront = new LayerClip(this, oTmx.oMainMap.aLayer[1], 0, 0);
+				
+				oLayerFloor = new LayerClip(this, oTmx.oMainMap.aLayer[2], 0, 0);
+				oLayerFloor.vRot.nPitch =  1.5708;
+				
+				oLayerFloor.vPos.nY =  32 * 10;
 				oLayerWall = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
+			
 				oLayerWall.vPos.nZ = -32;
 			}
 			
