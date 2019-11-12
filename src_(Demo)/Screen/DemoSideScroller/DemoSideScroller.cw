@@ -102,16 +102,17 @@ package  {
 				//TODO if loaded!
 			
 			
-			
-				oLayerFront = new LayerClip(this, oTmx.oMainMap.aLayer[1], 0, 0);
+				if(oTmx.oMainMap.aLayer.nSize > 2){
+					oLayerFront = new LayerClip(this, oTmx.oMainMap.aLayer[1], 0, 0);
+					
+					oLayerFloor = new LayerClip(this, oTmx.oMainMap.aLayer[2], 0, 0);
+					oLayerFloor.vRot.nPitch =  1.5708;
+					oLayerFloor.vPos.nY =  32 * 10;
+				}
 				
-				oLayerFloor = new LayerClip(this, oTmx.oMainMap.aLayer[2], 0, 0);
-				oLayerFloor.vRot.nPitch =  1.5708;
-				
-				oLayerFloor.vPos.nY =  32 * 10;
 				oLayerWall = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
-			
 				oLayerWall.vPos.nZ = -32;
+				
 			}
 			
 			Debug.fTrace("Finish laoded!");
