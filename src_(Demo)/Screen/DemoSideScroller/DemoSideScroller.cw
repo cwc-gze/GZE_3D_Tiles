@@ -42,6 +42,7 @@ package  {
 		public var oTmx : Tmx;
 		public var oLayerFront : LayerClip;
 		public var oLayerWall : LayerClip;
+		public var oLayerSide : LayerClip;
 		public var oLayerFloor : LayerClip;
 
 		
@@ -106,16 +107,18 @@ package  {
 				//TODO if loaded!
 			
 			
-				if(oTmx.oMainMap.aLayer.nSize > 2){
-					oLayerFront = new LayerClip(this, oTmx.oMainMap.aLayer[1], 0, 0);
+				if(oTmx.oMainMap.aLayer.nSize > 3){
+					oLayerWall = new LayerClip(this, oTmx.oMainMap.aLayer[1], 0, 0);
+			
 					
-					oLayerFloor = new LayerClip(this, oTmx.oMainMap.aLayer[2], 0, 0, Floor);
+					oLayerFloor = new LayerClip(this, oTmx.oMainMap.aLayer[3], 0, 0, Floor);
+					oLayerSide = new LayerClip(this, oTmx.oMainMap.aLayer[2], 0, 0, SideWall);
 					//oLayerFloor.vRot.nPitch =  1.5708;
 					//oLayerFloor.vPos.nY =  32 * 10;
 				}
 				
-				oLayerWall = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
-				oLayerWall.vPos.nZ = -32;
+				oLayerFront = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
+				oLayerFront.vPos.nZ = -32;
 				
 			}
 			
@@ -146,9 +149,11 @@ package  {
 			var _nMouseY : Float = Context.nMouseY - oItf.nHalfFrameHeight;
 
 			//!Updated each frame, parents before
-			vRot.nYaw = _nMouseX / oItf.nHalfFrameWidth / -1.15;
-			vRot.nPitch = _nMouseY / oItf.nHalfFrameHeight / -1.15;
-			
+		//	vRot.nYaw = _nMouseX / oItf.nHalfFrameWidth / -1.15;
+		//	vRot.nPitch = _nMouseY / oItf.nHalfFrameHeight / -1.15;
+			vRot.fSetSpeed(3);
+			vRot.nYaw.fTo( _nMouseX / oItf.nHalfFrameWidth / -1.15);
+			vRot.nPitch.fTo(  _nMouseY / oItf.nHalfFrameHeight / -1.15);
 			
 		}
 		
