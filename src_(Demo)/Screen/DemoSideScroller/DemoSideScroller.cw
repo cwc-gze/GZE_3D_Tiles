@@ -56,39 +56,21 @@ package  {
 		
 		
 
-		
-		
-		
+
 		public function DemoSideScroller( _oParent : Root ):Void {
 			Clip(_oParent, 0.0, 0.0);
-			
-			/*
-			oXml = new Xml("MyFirstTiles.tmx");
-			if(oXml.fLoad()){
-				oCurrNode = oXml.fFirst();
-				if(oCurrNode.hType == XmlNode.eType.Element){
-					var _oElement : XmlElement = oCurrNode;
-					Debug.fTrace1("XML Version : " + _oElement.fAttribute("version"));
-				}
-			}*/
-			
-			//!Create an image
-	
-			
-	
-			
 			
 			oTmx = new Tmx(0);
 			var _oRcTmx : RcText = new  RcText("Exe|Rc/Tiled/MyFirstTiles.tmx");
 			
-			/*
+					
 			Debug.fTrace("RcImgSequence --- ");
 			var _oRc : RcImgSequence = new  RcImgSequence("Exe|Rc/Sprite/MegaSam/Walk/Walk0001.png"); //Walk0001.png
 			Debug.fTrace("RcImgSequence2 --- ");
 			
-			oPerso = new Perso(this, 300.0, 500.0);
+			oPerso = new Perso(this, 300.0, 300.0);
 			oPerso.fAddSequence( _oRc, 0, 0, true);
-			*/
+		
 			
 			/*
 			oTexNormalLayer = new RcImg("Exe|Rc/Tiled/MetroidLike/testBump.png");
@@ -98,18 +80,15 @@ package  {
 				oTexNormalLayer.fGpuLoad();
 			}
 			*/
-			
-			
+					
 			if(oTmx.fLoad(_oRcTmx)){
 				Debug.fWarning("Laoded!!!!!!!!!!!!!");
 				Debug.fWarning("Nb Layer : " + oTmx.oMainMap.aLayer.nSize);
 			//	Debug.fWarning("Nb Layer : " + oTmx.oMainMap.aLayer[1].sName);
 				//TODO if loaded!
 			
-			
 				if(oTmx.oMainMap.aLayer.nSize > 3){
 					oLayerWall = new LayerClip(this, oTmx.oMainMap.aLayer[1], 0, 0);
-			
 					
 					oLayerFloor = new LayerClip(this, oTmx.oMainMap.aLayer[3], 0, 0, Floor);
 					oLayerSide = new LayerClip(this, oTmx.oMainMap.aLayer[2], 0, 0, SideWall);
@@ -119,10 +98,13 @@ package  {
 				
 				oLayerFront = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
 				oLayerFront.vPos.nZ = -32;
-				
 			}
 			
 			Debug.fTrace("Finish laoded!");
+			
+			
+	
+			
 			
 			//EnYaw(5);
 			//EnPitch(5);

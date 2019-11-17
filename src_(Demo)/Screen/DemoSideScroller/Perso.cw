@@ -27,7 +27,7 @@ package  {
 		//	vPos.fSetSpeed(10);
 		//	vPos.fSetLimit(99900);
 		
-		
+	//	vPos.nX = vPos.nX + nSpeed;
 
 			if(Key.fIsDown(Right)){ 
 				vPos.nX = vPos.nX + nSpeed;
@@ -36,6 +36,7 @@ package  {
 			}
 			
 			if(Key.fIsDown(Left)){ 
+				vPos.nX = vPos.nX - nSpeed;
 				//MnX(nSpeed * -1);
 			//	TnWidth(-1);
 			}
