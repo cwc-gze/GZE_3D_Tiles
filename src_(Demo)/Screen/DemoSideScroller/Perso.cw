@@ -5,7 +5,11 @@ package  {
 	import GZ.Gfx.MovieClip;
 	import GZ.Gfx.Root;
 	import GZ.Input.Key;
-
+	
+	import GZ.File.RcImg;
+	
+	import GZ.File.RcAtlas;
+	
 	/**
 	 * @author Maeiky
 	 */

@@ -4,6 +4,7 @@ package  {
 	import GZ.Sys.Interface.Context;
 	import GZ.File.RcImgSequence;
 	import GZ.File.RcImg;
+	import GZ.File.RcAtlas;
 	import GZ.File.Resource;
 	import GZ.File.RcText;
 	import GZ.Gfx.Root;
@@ -37,7 +38,6 @@ package  {
 		public var oXml : Xml;
 		public var oCurrNode : XmlNode;
 		
-		
 	
 		public var oTmx : Tmx;
 		public var oLayerFront : LayerClip;
@@ -46,16 +46,15 @@ package  {
 		public var oLayerFloor : LayerClip;
 
 		
-		
 		public var oTexNormalLayer : RcImg;
 		
 		
 		public var oPerso : Perso;
+		public var oAtlas : RcAtlas;
 				
 		public var nTime : Int;
 		
 		
-
 
 		public function DemoSideScroller( _oParent : Root ):Void {
 			Clip(_oParent, 0.0, 0.0);
@@ -71,6 +70,9 @@ package  {
 			oPerso = new Perso(this, 300.0, 300.0);
 			oPerso.fAddSequence( _oRc, 0, 0, true);
 		
+			oAtlas = new RcAtlas(512);
+			oAtlas.fAddSequence(_oRc);
+			oAtlas.fPack();
 			
 			/*
 			oTexNormalLayer = new RcImg("Exe|Rc/Tiled/MetroidLike/testBump.png");
