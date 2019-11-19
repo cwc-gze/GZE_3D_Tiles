@@ -8,6 +8,7 @@ package  {
 	import GZ.File.Resource;
 	import GZ.File.RcText;
 	import GZ.Gfx.Root;
+	import GZ.Gfx.Clip.Img;
 	
 	import GZ.Sys.Interface.Interface;
 	import GZ.Gfx.Clip;
@@ -54,11 +55,12 @@ package  {
 				
 		public var nTime : Int;
 		
-		
+		public var oAtlasImg : Img;
 
 		public function DemoSideScroller( _oParent : Root ):Void {
 			Clip(_oParent, 0.0, 0.0);
 			
+
 			oTmx = new Tmx(0);
 			var _oRcTmx : RcText = new  RcText("Exe|Rc/Tiled/MyFirstTiles.tmx");
 			
@@ -66,13 +68,23 @@ package  {
 			Debug.fTrace("RcImgSequence --- ");
 			var _oRc : RcImgSequence = new  RcImgSequence("Exe|Rc/Sprite/MegaSam/Walk/Walk0001.png"); //Walk0001.png
 			Debug.fTrace("RcImgSequence2 --- ");
+		
+			oAtlas = new RcAtlas(256);
+			oAtlas.fAddSequence(_oRc);
+
+		//	oAtlas.fPack();
+			
+			if(Context.oItf.bGpuDraw){
+				oAtlas.fSetGpuTexLayer(Attribute_Quad.oTexSprites);
+			}
+			//oAtlasImg  = new Img(this, 300, 400,  oAtlas, true,0 ,0, false);
+			oAtlasImg  = new Img(this, 0, 0,  oAtlas, false);
+ 			
+			oAtlas.fTransposeAll();	
+			
 			
 			oPerso = new Perso(this, 300.0, 300.0);
 			oPerso.fAddSequence( _oRc, 0, 0, true);
-		
-			oAtlas = new RcAtlas(512);
-			oAtlas.fAddSequence(_oRc);
-			oAtlas.fPack();
 			
 			/*
 			oTexNormalLayer = new RcImg("Exe|Rc/Tiled/MetroidLike/testBump.png");
@@ -96,6 +108,7 @@ package  {
 					oLayerSide = new LayerClip(this, oTmx.oMainMap.aLayer[2], 0, 0, SideWall);
 					//oLayerFloor.vRot.nPitch =  1.5708;
 					//oLayerFloor.vPos.nY =  32 * 10;
+			
 				}
 				
 				oLayerFront = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
