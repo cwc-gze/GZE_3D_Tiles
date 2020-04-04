@@ -21,10 +21,11 @@ package  {
 	
 	import GZ.Gpu.ShaderModel.GzModel.GzShModel;
 	import GZ.Gpu.ShaderModel.GzModel.GzShModel_Minimal;
-	import GZ.Gpu.ShaderModel.GzModel.GzShModel_Quad;
+	import GZ.Gpu.ShaderModel.GzModel.GzShModel_Quad.GzShModel_Quad;
 	import GZ.Gpu.ShaderModel.GzModel.GzShModel_Raymarching;
 	import GZ.Gpu.ShaderModel.GzModel.GzShModel_Shadertoy;
-	import GZ.Gpu.ShaderModel.GzModel.GzShModel_Tiles;
+	//import GZ.Gpu.ShaderModel.GzModel.GzShModel_Tiles;
+	import GZ.Gpu.ShaderModel.GzModel.GzShModel_Tiles.GzShModel_Tiles;
 	
 	import Demo.Screen.DemoSideScroller.DemoSideScroller;
 	
@@ -92,7 +93,7 @@ package  {
 			
 			//!Make window transparent (Render or CPU)
 			var _bTranparent : Bool = false;
-			_bTranparent = false;
+			_bTranparent = true;
 			
 			//Create a new windows
 			Interface(_oThreadItf, "GroundZero", 800, 600, _bTranparent, 0xFFFFFFFF);
