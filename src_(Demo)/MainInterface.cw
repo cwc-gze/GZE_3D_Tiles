@@ -46,6 +46,10 @@ package  {
 	import GZ.Base.Mat4x4;
 	import GZ.Base.Perspective;
 	import GZ.Gfx.Clip.Img;
+	
+	import GZ.Gpu.ShaderModel.GzModel.GzShCommun.GzShCommun_Light;
+	import GZ.Gfx.Effects.Light;
+	import GZ.Gfx.Vector.Box;
 
 	/*
 	<cpp>
@@ -63,6 +67,9 @@ package  {
 		public var oDemo : Clip;
 		public var aDemoArrow : Array<DemoArrow>;
 		public	var oImg : Img;
+		public var oLight : Light;
+		public var oLight2 : Light;
+
 	//	public var oGzShModel : GzShModel;
 		
 	//	public var oFps : FpsCount;
@@ -144,6 +151,15 @@ package  {
 			
 			
 			oDemo = new DemoSideScroller(this);
+			
+			
+			oLight  = new Light( 400.0,400.0, -200.0);
+			GzShCommun_Light.fAddLight(oLight);
+				
+				
+			oLight2  = new Light( 200.0,400.0, -200.0);
+			GzShCommun_Light.fAddLight(oLight2);
+				
 
 		//oDemo = new DemoText(this);
 					

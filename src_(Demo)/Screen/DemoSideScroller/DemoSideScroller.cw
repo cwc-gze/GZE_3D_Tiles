@@ -28,6 +28,9 @@ package  {
 	import GZ.Sff.Tmx.Tmx;
 	import GZ.Gpu.ShaderModel.AtModel.Attribute_Quad;
 	import GZ.Gfx.Tile.LayerData;
+	import GZ.Gpu.ShaderModel.GzModel.GzShCommun.GzShCommun_Light;
+	import GZ.Gfx.Effects.Light;
+	import GZ.Gfx.Vector.Box;
 	
 	/**
 	 * @author Maeiky
@@ -49,13 +52,16 @@ package  {
 		
 		public var oTexNormalLayer : RcImg;
 		
-		
+		public var oBox : Box;
+				
 		public var oPerso : Perso;
+
 		public var oAtlas : RcAtlas;
 				
 		public var nTime : Int;
 		
 		public var oAtlasImg : Img;
+		public var oLight : Light;
 
 		public function DemoSideScroller( _oParent : Root ):Void {
 			Clip(_oParent, 0.0, 0.0);
@@ -128,6 +134,10 @@ package  {
 
 
 			
+
+				
+		//	oBox = new Box( 0,0,  50,50,    50);
+				
 			//EnYaw(5);
 			//EnPitch(5);
 		}
