@@ -10,7 +10,8 @@ package  {
 	//import GZ.File.RcImg;
 //	import GZ.Gfx.Root;
 	
-	
+	import Demo.LigthBounce;
+
 	//import GZ.Gfx.Clip.Img;
 	import GZ.Gfx.Clip;
 	
@@ -70,6 +71,10 @@ package  {
 		public var oLight : Light;
 		public var oLight2 : Light;
 
+		
+		public var aLigthBounce: Array<LigthBounce>;
+		
+		
 	//	public var oGzShModel : GzShModel;
 		
 	//	public var oFps : FpsCount;
@@ -110,6 +115,11 @@ package  {
 			
 			//fCreateInterface();
 			fCreateInterface(300,100);
+			
+			
+
+			
+			
 		}
 		
 		
@@ -152,14 +162,18 @@ package  {
 			
 			oDemo = new DemoSideScroller(this);
 			
-			
+			/*
 			oLight  = new Light( 400.0,400.0, -200.0);
 			GzShCommun_Light.fAddLight(oLight);
 				
 				
 			oLight2  = new Light( 200.0,400.0, -200.0);
 			GzShCommun_Light.fAddLight(oLight2);
+				*/
 				
+			for(var i : Int = 0; i < 5; i++){
+				aLigthBounce.fPush(new LigthBounce(i));
+			}
 
 		//oDemo = new DemoText(this);
 					
@@ -189,12 +203,12 @@ package  {
 			//	mTest.v3.nW = 21;
 		}
 		
-		
+		/*
 		override public function fUpdateChildToParent():Void {
 				
 			//!Updated each frame, parents before
 		}
-		
+		*/
 		
 		override public function fUpdateParentToChild():Void {
 			//!Updated each frame, childs before

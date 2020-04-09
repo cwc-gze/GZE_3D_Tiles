@@ -1,7 +1,6 @@
 package  {
 
 import Demo.MainInterface;
-import Demo.Test;
 
 	import GZ.Base.Thread.ThreadExt;
 
@@ -11,7 +10,7 @@ import Demo.Test;
 	
 	public class MainEntry extends EntryPoint {
 	
-		public var oTest: Test;
+		
 		
 		public var oThread: ThreadExt;
 
@@ -30,7 +29,7 @@ import Demo.Test;
 
 		//	dTest = fTestDelegate;
 			//C~ 
-			oTest = new Test();
+			//oTest = new Test();
 			Debug.fTrace("4444----------- ");
 
 			Debug.fTrace(" - Test QueueArray / Delegates -");

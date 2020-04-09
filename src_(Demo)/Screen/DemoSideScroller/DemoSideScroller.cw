@@ -31,6 +31,7 @@ package  {
 	import GZ.Gpu.ShaderModel.GzModel.GzShCommun.GzShCommun_Light;
 	import GZ.Gfx.Effects.Light;
 	import GZ.Gfx.Vector.Box;
+	import GZ.Gfx.Vector.VectorShape;
 	
 	/**
 	 * @author Maeiky
@@ -53,6 +54,7 @@ package  {
 		public var oTexNormalLayer : RcImg;
 		
 		public var oBox : Box;
+		public var oVectorShape : VectorShape;
 				
 		public var oPerso : Perso;
 
@@ -132,11 +134,12 @@ package  {
 			
 			Debug.fTrace("Finish laoded!");
 
-
+			//oLight = new Light(50, 50, 50);
 			
 
 				
-		//	oBox = new Box( 0,0,  50,50,    50);
+			//oBox = new Box( 0,0,  50,50,    50);
+			//oVectorShape = new VectorShape(this,  10);
 				
 			//EnYaw(5);
 			//EnPitch(5);
