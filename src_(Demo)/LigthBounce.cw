@@ -21,9 +21,13 @@ package  {
 			
 		
 			oLight  = new Light(50 + 100 * _nIndex, 100.0 * _nIndex, -100.0 - 15);
+			oLight.oBoxColor.vColor.nAlpha = 0.6;
+			oLight.oBoxSpecular.vColor.nAlpha = 0.2;
+			
+			
 			nIndex  = GzShCommun_Light.fAddLight();
 
-			oLight.vColor.nAlpha = 0.000;
+			//oLight.vColor.nAlpha = 0.000;
 			Debug.fTrace("NewLight : " + nIndex);
 			
 		}
