@@ -75,22 +75,32 @@ package  {
 					
 			Debug.fTrace("RcImgSequence --- ");
 			var _oRc : RcImgSequence = new  RcImgSequence("Exe|Rc/Sprite/MegaSam/Walk/Walk0001.png"); //Walk0001.png
+		
+		//	_oRc.fCpuLoad();
 			Debug.fTrace("RcImgSequence2 --- ");
+		
 		
 			oAtlas = new RcAtlas(256);
 			oAtlas.fAddSequence(_oRc);
 
-		//	oAtlas.fPack();
+			oAtlas.fPack();
+			//oAtlas.fCpuLoad();
 			
 			
 			
-			
+	oAtlas.fTransposeAll();		
+		
 	if(Context.oItf.bGpuDraw){
 		oAtlas.fSetGpuTexLayer(Attribute_Quad.oTexSprites);
+		oAtlas.fGpuLoad();
+		
+		Debug.fTrace("AtlasSpriteLayer: " + Attribute_Quad.oTexSprites.nSlot);
 	}
-	//oAtlasImg  = new Img(this, 300, 400,  oAtlas, true,0 ,0, false);
-	oAtlasImg  = new Img(this, 0, 0,  oAtlas, false);
-	oAtlas.fTransposeAll();	
+
+//	oAtlasImg  = new Img(this, 0, 0,  oAtlas, false);
+	
+	
+	
 	
 
 
@@ -143,6 +153,11 @@ package  {
 				
 			//EnYaw(5);
 			//EnPitch(5);
+			
+				oAtlasImg  = new Img(this, 300, 450,  oAtlas, true,0 ,0, false);
+				oAtlasImg.vPos.nZ = 0;
+			
+			
 		}
 
 		
