@@ -132,20 +132,19 @@ package  {
 			
 				}
 				
-		
-				oPerso = new Perso(this, 300.0, 288.0);
-				oPerso.fAddSequence( _oRc, 0, 0, true);
-				oPerso.vPos.nZ = -16;
-		
-				
 				oLayerFront = new LayerClip(this, oTmx.oMainMap.aLayer[0], 0, 0);
 				oLayerFront.vPos.nZ = -32;
 			}
+			
 			
 			Debug.fTrace("Finish laoded!");
 
 			//oLight = new Light(50, 50, 50);
 			
+				oPerso = new Perso(this, 300.0, 288.0);
+				oPerso.fAddSequence( _oRc, 0, 0, true);
+				oPerso.vPos.nZ = -16;
+		
 
 				
 			//oBox = new Box( 0,0,  50,50,    50);

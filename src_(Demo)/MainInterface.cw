@@ -108,7 +108,7 @@ package  {
 			_bTranparent = true;
 			
 			//Create a new windows
-			Interface(_oThreadItf, "GroundZero", 800, 600, _bTranparent, 0xFFFFFFFF);
+			Interface(_oThreadItf, "GroundZero", 800, 600, _bTranparent, 0xFFFFFF11);
 			//, eWinBorder.Normal, true, true, true, _bCpuGraphique);
 		
 			
@@ -172,7 +172,7 @@ package  {
 				*/
 				
 			for(var i : Int = 0; i < 5; i++){
-				aLigthBounce.fPush(new LigthBounce(i));
+		//		aLigthBounce.fPush(new LigthBounce(i));
 			}
 
 		//oDemo = new DemoText(this);
