@@ -172,7 +172,7 @@ package  {
 				*/
 				
 			for(var i : Int = 0; i < 5; i++){
-		//		aLigthBounce.fPush(new LigthBounce(i));
+				aLigthBounce.fPush(new LigthBounce(i));
 			}
 
 		//oDemo = new DemoText(this);
