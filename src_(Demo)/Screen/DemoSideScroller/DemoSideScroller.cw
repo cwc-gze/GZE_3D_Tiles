@@ -115,7 +115,7 @@ package  {
 			*/
 
 
-
+		
 			if(oTmx.fLoad(_oRcTmx)){
 				Debug.fWarning("Laoded!!!!!!!!!!!!!");
 				Debug.fWarning("Nb Layer : " + oTmx.oMainMap.aLayer.nSize);
